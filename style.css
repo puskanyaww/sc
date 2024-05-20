@@ -1,0 +1,639 @@
+@font-face {
+    font-family: 'Belarus';
+    src: url(assets/fonts/Belarus.otf);
+}
+
+@font-face {
+    font-family: 'Modulord';
+    src: url(assets/fonts/Modulord.otf);
+}
+
+@font-face {
+    font-family: 'round';
+    src: url(assets/fonts/round.ttf);
+}
+
+@font-face {
+    font-family: 'TTChocolates';
+    src: url(assets/fonts/TT\ Chocolates\ Trial\ Bold.otf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'TTChocolates';
+    src: url(assets/fonts/TT\ Chocolates\ Trial\ Light.otf);
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'TTChocolates';
+    src: url(assets/fonts/TT\ Chocolates\ Trial\ Regular.otf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Timer';
+    src: url(assets/fonts/timer.otf);
+}
+
+#media img{
+    width: 1000px;
+    z-index: 100;
+}
+
+#media video{
+    width: 1200px;
+    left: -200px;
+    top: 20px;
+    position: absolute;
+    z-index: 100;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #000000;
+    align-items: center;
+    overflow: hidden;
+}
+
+game{
+    background: #fff;
+    display: block;
+    width: 1920px;
+    min-height: 1080px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    transition: background .3s ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6, p, a{
+    margin: 0;
+}
+
+
+.begin{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 50px;
+    color: #fff;
+    background: linear-gradient(30deg, rgba(129,106,255,1) 43%, rgba(170,192,255,1) 100%);
+}
+
+.begin h2{
+    font-family: 'Belarus';
+    font-size: 75px;
+}
+
+button{
+    padding: 10px 50px;
+    font-size: 35px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-family: 'TTChocolates';
+    font-weight: 100;
+    background: linear-gradient(30deg, rgba(255,255,255,1) 43%, rgba(155,162,182,1) 100%);
+}
+
+.teamChoose{
+    background: linear-gradient(266deg, rgba(129,106,255,1) 43%, rgba(170,192,255,1) 100%);
+    font-family: 'TTChocolates';
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.teamChoose h2{
+    font-family: 'Belarus';
+    color: #fff;
+    font-size: 75px;
+    animation: teamChoose .5s .1s ease-in-out forwards;
+}
+
+@keyframes teamChoose {
+    0%{
+        font-size: 75px;
+        border-bottom: #fff solid 0px;
+    }
+    100%{
+        font-size: 65px;
+        border-bottom: #fff solid 5px;
+    }
+}
+
+.teamDiv{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    height: 0;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: teamDiv .7s .1s forwards;
+}
+
+@keyframes teamDiv{
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 170px;
+    }
+}
+
+.teamDiv input{
+    width: 440px;
+    border-radius: 10px;
+    padding: 10px;
+    border: #000000 solid 3px;
+    font-size: 25px;
+    font-family: 'TTChocolates';
+    font-weight: 100;
+}
+
+.roundBumper{
+    font-family: 'round';
+    background-image: url(assets/bg.png);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 200px;
+    color: #816AFF;
+}
+
+.round{
+    background-image: url(assets/bg.png);
+}
+
+.round .teamName{
+    font-family: 'Modulord';
+    color: #816AFF;
+    position: absolute;
+    font-size: 130px;
+    left: 50px;
+    top: 50px;
+}
+
+#counterQuiz{
+    font-family: 'TTChocolates';
+    font-weight: 100;
+    position: absolute;
+    font-size: 50px;
+    left: 50px;
+    top: 170px;
+    color: #816AFF;
+}
+
+#media{
+    position: absolute;
+    font-size: 50px;
+    left: 870px;
+    top: 340px;
+
+}
+
+
+@keyframes roundSlideIn{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: scale(100%);
+    }
+}
+
+.roundBumper div{
+    animation: roundSlideIn .7s cubic-bezier(0, 0.01, 0.1, 0.99);
+}
+
+.teamChoose h3{
+    font-family: 'TTChocolates';
+    font-weight: 300;
+    color: #000000;
+    font-size: 45px;
+}
+
+#time{
+    font-family: 'Timer';
+    position: absolute;
+    font-size: 50px;
+    right: 240px;
+    top: 130px;
+}
+
+#timeClock{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    font-size: 50px;
+    right: 350px;
+    top: 125px;
+}
+
+.round1 .activeQuestion{
+    font-family: 'TTChocolates';
+    font-weight: 300;
+    padding: 20px;
+    position: absolute;
+    font-size: 50px;
+    left: 47px;
+    top: 235px;
+    background-color: #806aff7d;
+    border-radius: 10px;
+    border: #816AFF 4px solid;
+    animation: showQuest .5s ease-in-out;
+}
+
+.round1 .activeQuestion::before{
+    content: "В: ";
+    font-family: 'TTChocolates';
+    font-weight: 500;
+    font-size: 55px;
+}
+
+#results{
+    position: absolute;
+    left: 47px;
+    top: 235px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+#results h3{
+    font-family: 'TTChocolates';
+    font-weight: 300;
+    padding: 10px;
+    font-size: 40px;
+    background-color: #806aff7d;
+    border-radius: 10px;
+    border: #816AFF 4px solid;
+}
+
+#results div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@keyframes showQuest{
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes showQuestRight{
+    0%{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes showQuestRes{
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    40%{
+        opacity: 1;
+        transform: translateX(40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#results div img{
+    width: 50px;
+}
+
+#results div{
+    opacity: 0;
+    animation: showQuestRes .5s ease-in-out forwards;
+}
+
+#results div:nth-child(1){
+    animation-delay: 0s;
+}
+
+#results div:nth-child(2){
+    animation-delay: .1s;
+}
+
+#results div:nth-child(3){
+    animation-delay: .2s;
+}
+
+#results div:nth-child(4){
+    animation-delay: .3s;
+}
+
+#results div:nth-child(5){
+    animation-delay: .4s;
+}
+
+.round2 .activeQuestion{
+    font-family: 'TTChocolates';
+    font-weight: 300;
+    padding: 20px;
+    position: absolute;
+    font-size: 50px;
+    left: 47px;
+    top: 235px;
+    background-color: #806aff7d;
+    border-radius: 10px;
+    border: #816AFF 4px solid;
+    animation: showQuest .5s ease-in-out;
+    max-width: 1770px;
+}
+
+.finale{
+    background-image: url(assets/bg.png);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: #816AFF;
+    font-family: 'TTChocolates';
+}
+
+.finale h2{
+    font-size: 200px;
+    animation: showFinale 1s ease-in-out forwards;
+}
+
+@keyframes showFinale{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hideFinale{
+    0%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+.finale h1{
+    font-size: 100px;
+    animation: showFinale 1s ease-in-out;
+}
+
+.resultTable{
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
+    width: 650px;
+    padding: 20px;
+    border: 5px #816AFF solid;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.nomenTop{
+    display: flex;
+    font-weight: 300;
+    justify-content: space-between;
+}
+
+.resultTableDiv{
+    display: flex;
+    justify-content: space-between;
+    background-color: #806affa2;
+    border-radius: 10px;
+}
+
+.resultTableDiv p{
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #806affa2;
+}
+
+.deco{
+    position: absolute;
+    right: -157px;
+    bottom: -235px;
+    width: 640px;
+    transform: translateY(0) rotate(352deg);
+    animation: decoAnimInf 4s infinite ease-in-out;
+}
+
+@keyframes decoAnimInf {
+    0%{
+        transform: translateY(0) rotate(352deg);
+    }
+    50%{
+        transform: translateY(-25px) rotate(352deg);
+    }
+}
+
+.resultTableDiv p:nth-child(1){
+    max-width: 300px;
+}
+
+.round3 #variants div:nth-child(1)::before{
+    content: "А";
+    font-weight: 600;
+    font-size: 100px;
+}
+.round3 #variants div:nth-child(1){
+    display: flex;
+    font-family: 'TTChocolates';
+    font-weight: 300;
+    padding: 20px;
+    position: absolute;
+    font-size: 50px;
+    left: 447px;
+    top: 535px;
+    background-color: #806aff7d;
+    border-radius: 10px;
+    border: #816AFF 4px solid;
+    animation: showQuest .5s ease-in-out;
+    width: 400px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.round3 #variants div:nth-child(2)::before{
+    content: "Б";
+    font-weight: 600;
+    font-size: 100px;
+}
+.round3 #variants div:nth-child(2){
+    display: flex;
+    opacity: 0;
+    font-family: 'TTChocolates';
+    font-weight: 300;
+    padding: 20px;
+    position: absolute;
+    font-size: 50px;
+    left: 900px;
+    width: 400px;
+    top: 535px;
+    background-color: #806aff7d;
+    border-radius: 10px;
+    border: #816AFF 4px solid;
+    animation: showQuestRight .5s .3s ease-in-out forwards;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.round3 #category{
+    text-align: center;
+    font-family: 'TTChocolates';
+    font-weight: 700;
+    padding: 20px;
+    width: 1400px;
+    position: absolute;
+    font-size: 50px;
+    left: 190px;
+    top: 350px;
+    color: #816AFF;
+}
+
+.round3 .result::before{
+    content: "Верных ответов";
+    font-size: 50px;
+    color: #fff;
+}
+
+.round3 .result{
+    display: flex;
+    text-align: center;
+    font-family: 'TTChocolates';
+    font-weight: 700;
+    padding: 20px;
+    width: 1400px;
+    position: absolute;
+    font-size: 150px;
+    left: 190px;
+    top: 350px;
+    color: #816AFF;
+    background-color: #806aff7d;
+    border-radius: 10px;
+    border: #816AFF 4px solid;
+    flex-direction: column;
+    align-items: center;
+    animation: showFinale .5s ease-in-out;
+}
+
+.round4 #variants::before,.round5 #variants::before{
+    content: "Сопоставьте соответствия";
+    text-align: center;
+    font-size: 50px;
+    font-family: 'TTChocolates';
+    font-weight: 700;
+}
+
+.round4 #variants,.round5 #variants{
+    display: flex;
+    flex-direction: column;
+    width: 1300px;
+    gap: 10px;
+    position: absolute;
+    left: 310px;
+    top: 350px;
+}
+
+.round4 #variants div, .round5 #variants div{
+    display: flex;
+    padding: 20px;
+    font-family: 'TTChocolates';
+    font-weight: 700;
+    font-size: 55px;
+    color: #ffffff;
+    background-color: #806aff7d;
+    border-radius: 20px;
+    border: #816AFF 4px solid;
+    justify-content: space-between;
+}
+
+.round4 #variants div select, .round5 #variants div select{
+    background: none;
+    border: none;
+    font-size: 50px;
+    font-family: 'TTChocolates';
+    font-weight: 700;
+    text-align: left;
+}
+
+.round2 .result{
+    padding: 20px;
+    font-family: 'TTChocolates';
+    z-index: 1000;
+    font-weight: 700;
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    font-size: 55px;
+    color: #ffffff;
+    background-color: #806aff7d;
+    border-radius: 20px;
+    border: #816AFF 4px solid;
+    justify-content: space-between;
+}
+
+.round3 .messageCorrect{
+    padding: 20px;
+    font-family: 'TTChocolates';
+    z-index: 1000;
+    font-weight: 700;
+    position: fixed;
+    bottom: 140px;
+    left: 790px;
+    font-size: 55px;
+    color: #ffffff;
+    background-color: #806aff7d;
+    border-radius: 20px;
+    border: #816AFF 4px solid;
+    text-align: center; 
+    animation: showFinale .5s ease-in-out;
+}
+
+select { text-align-last: right; }
+option { direction: rtl; }
+
+.red{
+    color: red !important;
+}
+.green{
+    color: greenyellow !important;
+}
